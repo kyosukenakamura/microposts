@@ -29,6 +29,11 @@ class User extends Model implements AuthenticatableContract,
      * @var array
      */
     protected $fillable = ['name', 'email', 'password'];
+    
+        public function microposts()
+        {
+            return $this->hasMany(Micropost::class);
+        }
 
     /**
      * The attributes excluded from the model's JSON form.
